@@ -61,6 +61,19 @@ echo "Enabling Tomcat service"
 sudo systemctl enable tomcat
 
 
+#Apache Http Web Server
+if [ ! -f /usr/lib/apache2/mpm-worker/apache2 ];
+then
+	echo "Installing Apache"
+	sudo yum install -y httpd
+else
+	echo "Apache already installed - skipping"
+fi
+
+echo "Starting apache"
+sudo service httpd start
+
+
 
 
 
