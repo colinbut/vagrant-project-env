@@ -74,3 +74,15 @@ echo "Starting apache"
 sudo service httpd start
 
 
+#NGINX
+if [ ! -f /usr/sbin/nginx ];
+then
+	echo "Installing NGINX"
+	sudo yum install -y nginx
+	echo "Starting NGINX"
+	sudo /etc/init.d/nginx start
+else
+	echo "NGINX already installed - skipping"
+fi
+
+
